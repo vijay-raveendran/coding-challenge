@@ -37,6 +37,7 @@ function runSolutions(sourceCount) {
     }
   }).then(() => {
     return new Promise((resolve, reject) => {
+      resolve();
       /**
        * Challenge Number 2!
        *
@@ -59,7 +60,7 @@ function runSolutions(sourceCount) {
         .catch(reject);
     });
   });
-}
+};
 
 // Adjust this input to see how your solutions perform under various loads.
-runSolutions(10000);
+runSolutions(100);

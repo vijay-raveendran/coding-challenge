@@ -1,36 +1,36 @@
 const {
     SortedLinkedList,
     SortedLinkedListNode,
-  } = require("./solution/sync-sorted-merge");
+  } = require("./solution/sorted-linked-list");
 
 
   test = () => {
     const ll = new SortedLinkedList();
 
-    ll.insert({
+    ll.insert2({
       last: {
         date: 1,
         msg: "First element",
       },
     });
 
-    ll.insert({
+    ll.insert2({
       last: {
         date: 2,
         msg: "Second Element",
       },
     });
   
-    ll.insert({
+    ll.insert2({
       last: {
-        date: 1,
+        date: -200,
         msg: "Third Element",
       },
     });
   
-    ll.insert({
+    ll.insert2({
       last: {
-        date: 3,
+        date: -1,
         msg: "Fourth element",
       },
     });
