@@ -1,5 +1,6 @@
 "use strict";
-import { SortedLinkedList, SortedLinkedListNode } from "./sorted-linked-list";
+const { SortedLinkedList, SortedLinkedListNode } = require("./sorted-linked-list");
+const { BinarySearchTree } = require('./binary-search-tree');
 // Print all entries, across all of the sources, in chronological order.
 
 /**
@@ -20,12 +21,19 @@ import { SortedLinkedList, SortedLinkedListNode } from "./sorted-linked-list";
 
 module.exports = (logSources, printer) => {
 
-  const ll = new SortedLinkedList(printer);
+  // const ll = new SortedLinkedList(printer);
 
-  for (let i = 0; i < logSources.length; i++) {
-    ll.insert(logSources[i]);
-  }
-  ll.print();
+  // for (let i = 0; i < logSources.length; i++) {
+  //   ll.insert2(logSources[i]);
+  // }
+  // ll.print();
+
+  const bst = new BinarySearchTree(printer);
+  logSources.forEach(element => {
+    bst.insert(element)
+  });
+
+  bst.print();
   printer.done();
 };
 
