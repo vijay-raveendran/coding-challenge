@@ -7,28 +7,28 @@ const {
   test = () => {
     const ll = new SortedLinkedList();
 
-    ll.insert2({
+    ll.insert({
       last: {
         date: 1,
         msg: "First element",
       },
     });
 
-    ll.insert2({
+    ll.insert({
       last: {
         date: 2,
         msg: "Second Element",
       },
     });
   
-    ll.insert2({
+    ll.insert({
       last: {
         date: -200,
         msg: "Third Element",
       },
     });
   
-    ll.insert2({
+    ll.insert({
       last: {
         date: -1,
         msg: "Fourth element",

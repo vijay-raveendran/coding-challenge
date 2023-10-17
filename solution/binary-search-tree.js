@@ -22,9 +22,13 @@ class BinarySearchTree {
     this.inOrderTraversal((data) => this.printer.print(data.last));
   };
 
+  /**
+   * Creates a new Node and inserts it at head if null
+   * otherwise looks down the tree in lg n fashion.
+   * @param {any} data 
+   */
   insert(data) {
     const newNode = new Node(data);
-
     if (this.root === null) {
       this.root = newNode;
     } else {
@@ -32,6 +36,12 @@ class BinarySearchTree {
     }
   }
 
+  /**
+   * Decides where to put newNode relative to node
+   * by comparing the date values of the logSource data
+   * @param {any} node 
+   * @param {Node} newNode 
+   */
   insertNode(node, newNode) {
     if (newNode.getData() < node.getData()) {
       if (node.left === null) {
@@ -64,15 +74,17 @@ class BinarySearchTree {
   }
 
   // Will return the logs in order due to the nature of a BST
+  // The callback means we can do something (i.e. use the Printer) for each logSource
   inOrderTraversal(callback) {
-    this.inOrderTraversalNode(this.root, callback);
+    this.inOrderHelper(this.root, callback);
   }
 
-  inOrderTraversalNode(node, callback) {
+  // Helper function to do an In-Order Traversal.
+  inOrderHelper(node, callback) {
     if (node !== null) {
-      this.inOrderTraversalNode(node.left, callback);
+      this.inOrderHelper(node.left, callback);
       callback(node.data);
-      this.inOrderTraversalNode(node.right, callback);
+      this.inOrderHelper(node.right, callback);
     }
   }
 }

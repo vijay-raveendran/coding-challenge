@@ -11,53 +11,8 @@ class SortedLinkedList {
      * @param {*} data the LogEntry data to be stored
      * @deprecated 
      */
-    insert = data => {
-      
-      // 1. First check head isn't null
-      if (this.head === null) {
-        this.head = new SortedLinkedListNode(data);
-        this.size++;
-        return;
-      }
-      
-  
-      // TODO: This is super messy
-      if (data.last.date < this.head.data.last.date) {
-        let elem = new SortedLinkedListNode(data);
-        elem.next = this.head;
-        this.head = elem;
-        return;
-      }
-  
-      let ptr = this.head;
-  
-      while (ptr !== null) {
-  
-        
-  
-        if (ptr.data.last.date < data.last.date && ptr.next == null) {
-          let elem = new SortedLinkedListNode(data);
-          elem.next = null;
-          ptr.next = elem;
-          break;
-        }
-  
-        if (ptr.next.data.last.date >= data.last.date) {
-          let elem = new SortedLinkedListNode(data);
-          elem.next = ptr.next;
-          ptr.next = elem;
-          break;
-        }
-        ptr = ptr.next;
-      }
-      
-      
-  
-      // this.print();
-      this.size++;
-    }
 
-    insert2 = data => {
+    insert = data => {
 
         // Empty head
         if (this.head === null) {
@@ -107,7 +62,7 @@ class SortedLinkedList {
       }
     }
   
-    size = () => {
+    getSize = () => {
       return this.size;
     }
   }
