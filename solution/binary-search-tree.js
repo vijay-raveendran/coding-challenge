@@ -16,7 +16,7 @@ class BinarySearchTree {
   }
 
   /**
-   * Do an in-order traversal of the tree
+   * Do an in-order traversal of the tree to print out the logs in chronological order
    */
   print = () => {
     this.inOrderTraversal((data) => this.printer.print(data.last));
@@ -48,6 +48,7 @@ class BinarySearchTree {
     }
   }
 
+  // Returns a promise instead of nothing so we can await the result. 
   async asyncInsert(data) {
     return new Promise((resolve, reject) => {
       const newNode = new Node(data);
@@ -62,6 +63,7 @@ class BinarySearchTree {
     });
   }
 
+  // Will return the logs in order due to the nature of a BST
   inOrderTraversal(callback) {
     this.inOrderTraversalNode(this.root, callback);
   }

@@ -1,8 +1,4 @@
 "use strict";
-const {
-  SortedLinkedList,
-  SortedLinkedListNode,
-} = require("./sorted-linked-list");
 const { BinarySearchTree } = require("./binary-search-tree");
 // Print all entries, across all of the *async* sources, in chronological order.
 
