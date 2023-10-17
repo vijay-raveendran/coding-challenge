@@ -12,7 +12,7 @@ module.exports = async (logSources, printer) => {
       });
 
       bst.print();
-      resolve(printer.done());
+      resolve(printer.done()); 
 
     } catch {
       reject();

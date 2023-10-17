@@ -18,6 +18,6 @@ module.exports = (logSources, printer) => {
     bst.insert(element)
   });
 
-  bst.print();
+  bst.print(); // O(n) because traversal
   printer.done();
 };
